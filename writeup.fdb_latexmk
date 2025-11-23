@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber writeup"] 1763934137.76317 "writeup.bcf" "writeup.bbl" "writeup" 1763934805.13414 0
+["biber writeup"] 1763934137.76317 "writeup.bcf" "writeup.bbl" "writeup" 1763935265.40076 0
   "refs.bib" 1763842513 1617 c7a5864c5df8c44cb01b59c814643895 ""
-  "writeup.bcf" 1763934804 109015 0785162aac4cf79b49090c20ef27d0ed "pdflatex"
+  "writeup.bcf" 1763935265 109015 0785162aac4cf79b49090c20ef27d0ed "pdflatex"
   (generated)
   "writeup.bbl"
   "writeup.blg"
   (rewritten before read)
-["pdflatex"] 1763934803.15192 "c:/Users/caima/OneDrive/Desktop/Physics and Shit/Phys11/Ph-11-ImDaBiggestBird/writeup.tex" "writeup.pdf" "writeup" 1763934805.13516 0
+["pdflatex"] 1763935262.76824 "c:/Users/caima/OneDrive/Desktop/Physics and Shit/Phys11/Ph-11-ImDaBiggestBird/writeup.tex" "writeup.pdf" "writeup" 1763935265.40167 2
   "C:/Users/caima/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1763744574 81245 b430549db98beb1d3a03071ea49cab66 ""
   "C:/Users/caima/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1763744586 25420 2af878d44a05b94276613efae4325eb6 ""
   "C:/Users/caima/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1763744583 28976 44a7a4edf8c8b4c5fc896c4bfa0534cf ""
@@ -214,14 +214,17 @@
   "C:/Users/caima/AppData/Local/Programs/MiKTeX/tex/latex/tools/xspace.sty" 1749468414 4545 d7bb86d489a8ad5263e4c34304c03aee ""
   "C:/Users/caima/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/caima/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/caima/OneDrive/Desktop/Physics and Shit/Phys11/Ph-11-ImDaBiggestBird/writeup.tex" 1763934802 16278 90ae8f0f5aeb7718f48cf7875647a513 ""
+  "c:/Users/caima/OneDrive/Desktop/Physics and Shit/Phys11/Ph-11-ImDaBiggestBird/writeup.tex" 1763935259 17448 a1d09ffb6b59aedc3dc810b1e6ead670 ""
+  "figures/initial_heading_1s.png" 1763934999 309708 96a15911c6b62faeca8d38d313cba3d5 ""
   "figures/lattice_headings.png" 1763933662 75741 e27a891127800b629a2d985bdd13bf5d ""
-  "writeup.aux" 1763934804 2952 4e271dbf955775ba11155745319adbc6 "pdflatex"
+  "order1_highA" 0 -1 0 ""
+  "order2" 0 -1 0 ""
+  "order2_highA" 0 -1 0 ""
+  "writeup.aux" 1763935265 4179 9c237e721e86d3c57702bbedaee8903e "pdflatex"
   "writeup.bbl" 1763934140 6944 66197074c9d97e0bce4ee79ef0c7bcd6 "biber writeup"
-  "writeup.out" 1763934804 1357 485f80b18165d4578c855179b82909bb "pdflatex"
-  "writeup.run.xml" 1763934804 2326 ac238b94e04b8a9d4d1d2ae873f90c9b "pdflatex"
-  "writeup.tex" 1763934802 16278 90ae8f0f5aeb7718f48cf7875647a513 ""
-  "writeup.toc" 1763934804 856 92fb936e958b13b2aa69da27f9cd07fb "pdflatex"
+  "writeup.out" 1763935265 1357 485f80b18165d4578c855179b82909bb "pdflatex"
+  "writeup.tex" 1763935259 17448 a1d09ffb6b59aedc3dc810b1e6ead670 ""
+  "writeup.toc" 1763935265 856 2f5d417d251eb07056a0e24668bb4ce1 "pdflatex"
   (generated)
   "writeup.aux"
   "writeup.bcf"
