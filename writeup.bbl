@@ -1,0 +1,181 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{ballerini2008interaction}{article}{}{}
+      \name{author}{12}{}{%
+        {{hash=522179fa9bcaddf834829b71278bb58e}{%
+           family={Ballerini},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=73e31acea8c6106363473a40291edfd6}{%
+           family={Cabibbo},
+           familyi={C\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=48dc9f952c545ae3d61e07a1ccf3a78b}{%
+           family={Candelier},
+           familyi={C\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=b380302bcdab120a370a879163a0d0aa}{%
+           family={Cavagna},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b9ef3bf51d20c1f7cb5409ddead13eb6}{%
+           family={Cisbani},
+           familyi={C\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d84f6ec458f046db2a6c56c9d50dbb5a}{%
+           family={Giardina},
+           familyi={G\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=91a2c37b93c0a7843429bc7cead36b74}{%
+           family={Lecomte},
+           familyi={L\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=faf5c200c3e331c7e78956f4ac248c45}{%
+           family={Orlandi},
+           familyi={O\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e4f99fa1b31db590a7df474f2a1b63b7}{%
+           family={Parisi},
+           familyi={P\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=fc1bdd8ad28b2b6d9e0e286f31865ec9}{%
+           family={Procaccini},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=78b0b176ec79b573a3f21fa5d95349d0}{%
+           family={Viale},
+           familyi={V\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=22d1a5c5a71f0933147c1819810ff897}{%
+           family={Zdravkovic},
+           familyi={Z\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b6fdda3192347ff1a991bcc5b977563}
+      \strng{fullhash}{dee7ca13774e03d2f9f1761ef3b24e77}
+      \strng{fullhashraw}{dee7ca13774e03d2f9f1761ef3b24e77}
+      \strng{bibnamehash}{5b6fdda3192347ff1a991bcc5b977563}
+      \strng{authorbibnamehash}{5b6fdda3192347ff1a991bcc5b977563}
+      \strng{authornamehash}{5b6fdda3192347ff1a991bcc5b977563}
+      \strng{authorfullhash}{dee7ca13774e03d2f9f1761ef3b24e77}
+      \strng{authorfullhashraw}{dee7ca13774e03d2f9f1761ef3b24e77}
+      \field{labelalpha}{Bal+08}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proc. Natl. Acad. Sci. U.S.A.}
+      \field{number}{4}
+      \field{title}{Interaction ruling animal collective behavior depends on topological rather than metric distance: Evidence from a field study}
+      \field{volume}{105}
+      \field{year}{2008}
+      \field{pages}{1232\bibrangedash 1237}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1073/pnas.0711437105
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1073/pnas.0711437105
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1073/pnas.0711437105
+      \endverb
+    \endentry
+    \entry{SOS}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=f7b28f3352eaacebbbc56b73db55a6ea}{%
+           family={Olfati-Saber},
+           familyi={O\bibinithyphendelim S\bibinitperiod},
+           given={Reza},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Diego, CA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{f7b28f3352eaacebbbc56b73db55a6ea}
+      \strng{fullhash}{f7b28f3352eaacebbbc56b73db55a6ea}
+      \strng{fullhashraw}{f7b28f3352eaacebbbc56b73db55a6ea}
+      \strng{bibnamehash}{f7b28f3352eaacebbbc56b73db55a6ea}
+      \strng{authorbibnamehash}{f7b28f3352eaacebbbc56b73db55a6ea}
+      \strng{authornamehash}{f7b28f3352eaacebbbc56b73db55a6ea}
+      \strng{authorfullhash}{f7b28f3352eaacebbbc56b73db55a6ea}
+      \strng{authorfullhashraw}{f7b28f3352eaacebbbc56b73db55a6ea}
+      \field{labelalpha}{Olf06}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 45th IEEE Conference on Decision and Control}
+      \field{title}{Swarms on Sphere: A Programmable Swarm with Synchronous Behaviors like Oscillator Networks}
+      \field{year}{2006}
+      \field{pages}{5060\bibrangedash 5066}
+      \range{pages}{7}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:12476303
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:12476303
+      \endverb
+    \endentry
+    \entry{swarm_video_youtube}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8dd1bae8da2e2408210d0656fbe6b7d1}{%
+           family={{YouTube}},
+           familyi={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{8dd1bae8da2e2408210d0656fbe6b7d1}
+      \strng{fullhash}{8dd1bae8da2e2408210d0656fbe6b7d1}
+      \strng{fullhashraw}{8dd1bae8da2e2408210d0656fbe6b7d1}
+      \strng{bibnamehash}{8dd1bae8da2e2408210d0656fbe6b7d1}
+      \strng{authorbibnamehash}{8dd1bae8da2e2408210d0656fbe6b7d1}
+      \strng{authornamehash}{8dd1bae8da2e2408210d0656fbe6b7d1}
+      \strng{authorfullhash}{8dd1bae8da2e2408210d0656fbe6b7d1}
+      \strng{authorfullhashraw}{8dd1bae8da2e2408210d0656fbe6b7d1}
+      \field{labelalpha}{You25}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.youtube.com/watch?v=UVko9jyAkQg&t=205s}}
+      \field{note}{Accessed: \today}
+      \field{title}{Swarm Video}
+      \field{year}{2025}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

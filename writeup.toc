@@ -1,0 +1,12 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Theory / Background}{1}{section.2}%
+\contentsline {section}{\numberline {3}Swarm on a Sphere Analysis}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Computational Experiments}{4}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Implementation}{4}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Results}{5}{subsubsection.3.1.2}%
+\contentsline {section}{\numberline {4}Methods}{5}{section.4}%
+\contentsline {section}{\numberline {5}Results}{5}{section.5}%
+\contentsline {section}{\numberline {6}Discussion}{5}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{5}{section.7}%
+\contentsline {section}{\numberline {A}Supplementary material}{5}{appendix.A}%
