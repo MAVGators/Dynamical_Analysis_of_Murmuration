@@ -15,20 +15,10 @@ ChatGPT was used to help the following parts of this code:
     -Visualization and Plotting Functions
     -generate_save_path() function
     -sweep_parameters() function
-
-    
-Everything else was wrritten by hand by me
 '''
 
 
 def _sample_clustered_headings(N, base_direction, initial_radius=1.0, rng=None):
-    """Sample N headings clustered around a given base_direction.
-
-    initial_radius in [0, 1]:
-        - 1.0: headings are uniformly distributed on the sphere.
-        - 0.0: all headings exactly aligned with base_direction.
-        - values in between: headings confined to a spherical cap.
-    """
     if rng is None:
         rng = np.random.default_rng()
 
@@ -61,46 +51,13 @@ def _sample_clustered_headings(N, base_direction, initial_radius=1.0, rng=None):
 
 # random bird alignment on the unit sphere (single swarm)
 def create_sample(x=5, y=5, z=5, initial_radius=1.0, rng=None):
-    """Create N random unit headings, optionally clustered by an initial radius.
-
-    This uses a default base direction of [0, 0, 1].
-    """
     N = x * y * z
     base = np.array([0.0, 0.0, 1.0])
     return _sample_clustered_headings(N, base, initial_radius=initial_radius, rng=rng)
 
 
-def create_two_swarm_sample(
-    x=5,
-    y=5,
-    z=5,
-    initial_radius_a=0.3,
-    initial_radius_b=0.3,
-    direction_a=(0.0, 0.0, 1.0),
-    direction_b=(0.0, 0.0, -1.0),
-    frac_a=0.5,
-    rng=None,
-):
-    """Create headings for two interacting swarms mixed on the lattice.
-
-    Parameters
-    ----------
-    x, y, z : int
-        Lattice dimensions; total birds N = x*y*z.
-    initial_radius_a, initial_radius_b : float in [0, 1]
-        Cluster radii for swarm A and B.
-    direction_a, direction_b : 3-tuples
-        Mean heading directions for swarm A and B.
-    frac_a : float in [0, 1]
-        Fraction of birds belonging to swarm A (rest are swarm B).
-
-    Returns
-    -------
-    headings : (N, 3) array
-        Mixed headings; assignment of A/B to lattice sites is random.
-    labels : (N,) array of ints (0 or 1)
-        0 for swarm A, 1 for swarm B, in the same order as headings.
-    """
+def create_two_swarm_sample(x=5, y=5,z=5, initial_radius_a=0.3,
+                            initial_radius_b=0.3,direction_a=(0.0, 0.0, 1.0), direction_b=(0.0, 0.0, -1.0), frac_a=0.5,rng=None,):
     if rng is None:
         rng = np.random.default_rng()
 
@@ -192,10 +149,8 @@ def SOS_sim(interactions, init_cons, steps=1000, t_span=(0.0, 1.0)):
 
 def mean_pairwise_distance(headings):
     N = headings.shape[0]
-    # Compute all pairwise difference vectors using broadcasting: (N, N, 3)
     diffs = headings[:, None, :] - headings[None, :, :]
     dists = np.linalg.norm(diffs, axis=-1)
-    # Take upper triangle i < j to avoid double counting and zeros on diagonal
     i_upper, j_upper = np.triu_indices(N, k=1)
     if len(i_upper) == 0:
         return 0.0
@@ -345,7 +300,6 @@ def plot_solution(sol, step_skip=1, conditions=None, save_path=None):
         nonlocal quiv
         H = headings_t[frame]
 
-        # Remove old quiver and draw a new one
         quiv.remove()
         quiv = ax.quiver(
             origins, origins, origins,
@@ -354,7 +308,6 @@ def plot_solution(sol, step_skip=1, conditions=None, save_path=None):
             color='tab:blue', linewidth=0.5,
         )
 
-        # Update scatter points
         scat._offsets3d = (H[:, 0], H[:, 1], H[:, 2])
 
         ax.set_title(f"t = {t_vals[frame]:.2f}")
@@ -375,21 +328,8 @@ def generate_save_path(conditions, extension="gif"):
     return filename
 
 def sweep_parameters(param_grid, save_anim= False):
-    """Sweep over a grid of parameters and run simulations.
-
-    Parameters
-    ----------
-    param_grid : list[dict]
-        List of dictionaries, each specifying a set of conditions
-        (e.g. {"x":5, "y":5, "z":5, "initial_radius":0.5, "order":1, "weight":1.0}).
-    save_anim : bool, optional
-        If True, save animations as well as convergence plots.
-    """
-
-    all_curves = []  # to build combined overlay figure at the end
-
+    all_curves = []  
     for params in tqdm(param_grid):
-        # Basic lattice/initial condition parameters with defaults
         x = params.get("x", 5)
         y = params.get("y", 5)
         z = params.get("z", 5)
@@ -407,33 +347,25 @@ def sweep_parameters(param_grid, save_anim= False):
             "weight": weight,
         }
 
-        # Build lattice and initial headings
         lat = Lattice(x, y, z, spacing=1.0)
         headings = create_sample(x=x, y=y, z=z, initial_radius=init_radius)
         lat.populate_lattice(headings)
 
-        # Interactions (currently using topological neighbours; adjust if needed)
         interactions = topological_neighbor_interactions(lat, order=order, weight=weight)
 
-        # Run simulation
         sol = SOS_sim(interactions, init_cons=headings, steps=steps)
 
-        # Compute convergence curve (time + mean pairwise distance)
         t_vals, mpd = plot_convergence(sol, step_skip=1, conditions=None, save_path=None, show=False)
 
-        # Store for overlay plot
         all_curves.append((t_vals, mpd, conditions))
 
-        # Individual file paths
         anim_path = generate_save_path(conditions, extension="gif") if save_anim else None
         conv_path = generate_save_path(conditions, extension="png")
 
-        # Individual convergence plot
         plot_convergence_figure(t_vals, mpd, conditions=conditions, save_path=conv_path, show=False)
         if save_anim:
             plot_solution(sol, step_skip=5, conditions=conditions, save_path=anim_path)
 
-    # Create combined overlay figure for all conditions
     if all_curves:
         plt.figure()
         for t_vals, mpd, cond in all_curves:
@@ -448,7 +380,6 @@ def sweep_parameters(param_grid, save_anim= False):
         plt.tight_layout()
         plt.legend(fontsize=6)
 
-        # Save a generic combined figure
         plt.savefig('results\\sos_convergence_overlay.png')
         plt.close()
 
@@ -535,7 +466,6 @@ def two_swarm_test():
     x = y = z = 5
     steps = 200
 
-    # Example: two opposite headings with small initial radii
     headings, labels = create_two_swarm_sample(
         x=x,
         y=y,
@@ -692,25 +622,8 @@ def visualize_initial_headings_3d(
     plt.show()
 
 
-def overlay_two_swarm_vs_random(
-    x=5,
-    y=5,
-    z=5,
-    steps=200,
-    t_span=(0.0, 5.0),
-    initial_radius_two_swarm_a=0.2,
-    initial_radius_two_swarm_b=0.2,
-    frac_a=0.5,
-):
-    """Overlay convergence for two scenarios:
-
-    1) Two interacting swarms (opposite headings, small initial radii).
-    2) Single swarm with completely random headings (initial_radius = 1.0).
-
-    Saves a single PNG in `results/` with both curves.
-    """
-
-    # --- Scenario 1: two interacting swarms ---
+def overlay_two_swarm_vs_random(x=5,y=5,z=5,steps=200,t_span=(0.0, 5.0),
+                                initial_radius_two_swarm_a=0.2, initial_radius_two_swarm_b=0.2, frac_a=0.5,):
     headings_two, labels = create_two_swarm_sample(
         x=x,
         y=y,
@@ -728,7 +641,6 @@ def overlay_two_swarm_vs_random(
     sol_two = SOS_sim(interactions_two, init_cons=headings_two, steps=steps, t_span=t_span)
     t_two, mpd_two = plot_convergence(sol_two, step_skip=1, conditions=None, save_path=None, show=False)
 
-    # --- Scenario 2: single fully random swarm ---
     headings_rand = create_sample(x=x, y=y, z=z, initial_radius=1.0)
     lat_rand = Lattice(x, y, z, spacing=1.0)
     lat_rand.populate_lattice(headings_rand)
@@ -736,7 +648,7 @@ def overlay_two_swarm_vs_random(
     sol_rand = SOS_sim(interactions_rand, init_cons=headings_rand, steps=steps, t_span=t_span)
     t_rand, mpd_rand = plot_convergence(sol_rand, step_skip=1, conditions=None, save_path=None, show=False)
 
-    # --- Overlay figure ---
+    #overlay
     plt.figure()
     plt.plot(t_two, mpd_two, label="two swarms (opposite, clustered)", linewidth=1.5)
     plt.plot(t_rand, mpd_rand, label="single swarm (fully random)", linewidth=1.5)

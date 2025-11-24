@@ -112,6 +112,143 @@
       \verb https://doi.org/10.1073/pnas.0711437105
       \endverb
     \endentry
+    \entry{manget_lattice}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=e6dfad9a4fe675fd02f425915a964625}{%
+           family={Behrmann},
+           familyi={B\bibinitperiod},
+           given={Malte},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bbc9307322568b8d14cc162377bdbeca}{%
+           family={Lichtenstein},
+           familyi={L\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c0f7e056e985dfa147955b7d70af6a01}{%
+           family={Katsnelson},
+           familyi={K\bibinitperiod},
+           given={Mikhail},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1be80c85ee51714579a9aa490a8fd9b0}{%
+           family={Lechermann},
+           familyi={L\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{053d238833415a4d5e73efaec6394976}
+      \strng{fullhash}{a20018e458e52c4d578a23ede7f3562c}
+      \strng{fullhashraw}{a20018e458e52c4d578a23ede7f3562c}
+      \strng{bibnamehash}{053d238833415a4d5e73efaec6394976}
+      \strng{authorbibnamehash}{053d238833415a4d5e73efaec6394976}
+      \strng{authornamehash}{053d238833415a4d5e73efaec6394976}
+      \strng{authorfullhash}{a20018e458e52c4d578a23ede7f3562c}
+      \strng{authorfullhashraw}{a20018e458e52c4d578a23ede7f3562c}
+      \field{labelalpha}{Beh+16}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review B}
+      \field{month}{02}
+      \field{title}{Versatile Approach to the Spin Dynamics in Correlated Electron Systems}
+      \field{volume}{94}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1103/PhysRevB.94.165120
+      \endverb
+    \endentry
+    \entry{time_scale}{inbook}{}{}
+      \name{author}{2}{}{%
+        {{hash=d553a7e5ea6ff754e97df1fae48ecb2a}{%
+           family={Dattagupta},
+           familyi={D\bibinitperiod},
+           given={Sushanta},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5382c26fdafcbb94eb1c280d9fd3a2aa}{%
+           family={Puri},
+           familyi={P\bibinitperiod},
+           given={Sanjay},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{3980589c87c093d8b5c3811c20e61a48}
+      \strng{fullhash}{3980589c87c093d8b5c3811c20e61a48}
+      \strng{fullhashraw}{3980589c87c093d8b5c3811c20e61a48}
+      \strng{bibnamehash}{3980589c87c093d8b5c3811c20e61a48}
+      \strng{authorbibnamehash}{3980589c87c093d8b5c3811c20e61a48}
+      \strng{authornamehash}{3980589c87c093d8b5c3811c20e61a48}
+      \strng{authorfullhash}{3980589c87c093d8b5c3811c20e61a48}
+      \strng{authorfullhashraw}{3980589c87c093d8b5c3811c20e61a48}
+      \field{labelalpha}{DP04}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{One of the major aims of this book is to describe dissipative phenomena in systems which undergo phase transitions. In this context, perhaps the simplest model of an interacting many-body system is the Ising model [38--41], which was first introduced as a model for magnetic systems. However, with suitable generalizations, it has wide applications to a range of problems in condensed matter physics.}
+      \field{booktitle}{Dissipative Phenomena in Condensed Matter: Some Applications}
+      \field{isbn}{978-3-662-06758-1}
+      \field{title}{Kinetic Ising Models}
+      \field{year}{2004}
+      \field{pages}{31\bibrangedash 55}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1007/978-3-662-06758-1_2
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-662-06758-1_2
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-662-06758-1_2
+      \endverb
+    \endentry
+    \entry{glauber}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f90eee073cf5b84984cd0a6c353b51db}{%
+           family={Glauber},
+           familyi={G\bibinitperiod},
+           given={Roy\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f90eee073cf5b84984cd0a6c353b51db}
+      \strng{fullhash}{f90eee073cf5b84984cd0a6c353b51db}
+      \strng{fullhashraw}{f90eee073cf5b84984cd0a6c353b51db}
+      \strng{bibnamehash}{f90eee073cf5b84984cd0a6c353b51db}
+      \strng{authorbibnamehash}{f90eee073cf5b84984cd0a6c353b51db}
+      \strng{authornamehash}{f90eee073cf5b84984cd0a6c353b51db}
+      \strng{authorfullhash}{f90eee073cf5b84984cd0a6c353b51db}
+      \strng{authorfullhashraw}{f90eee073cf5b84984cd0a6c353b51db}
+      \field{labelalpha}{Gla63}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0022-2488}
+      \field{journaltitle}{Journal of Mathematical Physics}
+      \field{month}{02}
+      \field{number}{2}
+      \field{title}{Time‐Dependent Statistics of the Ising Model}
+      \field{volume}{4}
+      \field{year}{1963}
+      \field{pages}{294\bibrangedash 307}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1063/1.1703954
+      \endverb
+      \verb{eprint}
+      \verb https://pubs.aip.org/aip/jmp/article-pdf/4/2/294/19156949/294_1_online.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1063/1.1703954
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1063/1.1703954
+      \endverb
+    \endentry
     \entry{lyapunov_stability_theory}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=3fa6b96b5d3506325be293be5131cdde}{%
@@ -137,6 +274,50 @@
       \field{note}{Lecture or excerpt on Lyapunov stability theory. Author and publication details not provided in the document.}
       \field{title}{Lyapunov Stability Theory}
       \field{year}{2003}
+    \endentry
+    \entry{gauber_2}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b161db058f89bdbe9251076229f6bdc6}{%
+           family={{Nunes Da Silva}},
+           familyi={N\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b91d5c55b9216d7a579141b36a40b93e}{%
+           family={Jage},
+           familyi={J\bibinitperiod},
+           given={E.J.S.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{5ebe44be074abaaa260f4c8f9fd89566}
+      \strng{fullhash}{5ebe44be074abaaa260f4c8f9fd89566}
+      \strng{fullhashraw}{5ebe44be074abaaa260f4c8f9fd89566}
+      \strng{bibnamehash}{5ebe44be074abaaa260f4c8f9fd89566}
+      \strng{authorbibnamehash}{5ebe44be074abaaa260f4c8f9fd89566}
+      \strng{authornamehash}{5ebe44be074abaaa260f4c8f9fd89566}
+      \strng{authorfullhash}{5ebe44be074abaaa260f4c8f9fd89566}
+      \strng{authorfullhashraw}{5ebe44be074abaaa260f4c8f9fd89566}
+      \field{labelalpha}{NJ89}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0375-9601}
+      \field{journaltitle}{Physics Letters A}
+      \field{number}{1}
+      \field{title}{Glauber dynamics in the Ising chain with random transition rates}
+      \field{volume}{135}
+      \field{year}{1989}
+      \field{pages}{17\bibrangedash 19}
+      \range{pages}{3}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0375-9601(89)90717-2
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0375960189907172
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0375960189907172
+      \endverb
     \endentry
     \entry{SOS}{inproceedings}{}{}
       \name{author}{1}{}{%
@@ -175,6 +356,50 @@
       \endverb
       \verb{url}
       \verb https://api.semanticscholar.org/CorpusID:12476303
+      \endverb
+    \endentry
+    \entry{starling_reaction}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=4055e9d5b764e81ec72c6db790400d54}{%
+           family={Pomeroy},
+           familyi={P\bibinitperiod},
+           given={Harold},
+           giveni={H\bibinitperiod}}}%
+        {{hash=be4d4a03c272d1776e382282fb3397ab}{%
+           family={Heppner},
+           familyi={H\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{48dbe1549d0e93d9a00c025307c37f66}
+      \strng{fullhash}{48dbe1549d0e93d9a00c025307c37f66}
+      \strng{fullhashraw}{48dbe1549d0e93d9a00c025307c37f66}
+      \strng{bibnamehash}{48dbe1549d0e93d9a00c025307c37f66}
+      \strng{authorbibnamehash}{48dbe1549d0e93d9a00c025307c37f66}
+      \strng{authornamehash}{48dbe1549d0e93d9a00c025307c37f66}
+      \strng{authorfullhash}{48dbe1549d0e93d9a00c025307c37f66}
+      \strng{authorfullhashraw}{48dbe1549d0e93d9a00c025307c37f66}
+      \field{labelalpha}{PH77}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Startle response times of starlings (Sturnus vulgaris) to auditory and visual stimuli were determined in the laboratory. Birds were placed in an anechoic chamber and exposed to either a 1 ms flash of unfiltered white light, or a 30 ms pure tone burst. An electronic detection system monitored and recorded the activity of the birds. The recording apparatus allowed for an accuracy to 10−4 s in measuring reaction times. The mean reaction time of birds to light stimuli was 76·38 ms. The mean reaction time to sound stimuli was 80·64 ms.}
+      \field{issn}{0003-3472}
+      \field{journaltitle}{Animal Behaviour}
+      \field{title}{Laboratory determination of startle reaction time of the starling (Sturnus vulgaris)}
+      \field{volume}{25}
+      \field{year}{1977}
+      \field{pages}{720\bibrangedash 725}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0003-3472(77)90121-X
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/000334727790121X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/000334727790121X
       \endverb
     \endentry
     \entry{heisenberg_model_pires}{book}{}{}

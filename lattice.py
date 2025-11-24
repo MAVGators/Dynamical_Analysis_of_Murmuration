@@ -28,7 +28,6 @@ class Lattice:
 
 
 if __name__ == "__main__":
-    # Choose number of lattice points per side (must be integer)
     lattice = Lattice(4,3,6, spacing=1.0)
     data = np.random.rand(4*3*6)
     lattice.populate_lattice(data)

@@ -11,7 +11,6 @@ def topological_neighbor_interactions(lattice, order, weight):
     for i in range(lattice.x):
         for j in range(lattice.y):
             for k in range(lattice.z):
-                ''' add neighbors in a cube like manner around each bird'''
                 for di in range(-order, order + 1):
                     for dj in range(-order, order + 1):
                         for dk in range(-order, order + 1):
