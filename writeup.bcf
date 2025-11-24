@@ -2378,6 +2378,8 @@
     <bcf:citekey order="3" intorder="1">ballerini2008interaction</bcf:citekey>
     <bcf:citekey order="4" intorder="1">SOS</bcf:citekey>
     <bcf:citekey order="5" intorder="1">ballerini2008interaction</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">lyapunov_stability_theory</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">heisenberg_model_pires</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

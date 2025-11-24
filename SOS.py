@@ -580,16 +580,15 @@ def visualize_initial_headings_3d(
     """Quick diagnostic plot: lattice points + heading vectors in 3D.
 
     If two_swarms is True, use the two-swarm initial condition; otherwise
-    use a single fully random swarm.
+    use a single fully random swarm. In the two-swarm case, color swarms differently.
     """
-
     if two_swarms:
         headings, labels = create_two_swarm_sample(
             x=x,
             y=y,
             z=z,
-            initial_radius_a=0.2,
-            initial_radius_b=0.2,
+            initial_radius_a=0.05,
+            initial_radius_b=0.05,
             direction_a=(0.0, 0.0, 1.0),
             direction_b=(0.0, 0.0, -1.0),
             frac_a=0.5,
@@ -598,14 +597,11 @@ def visualize_initial_headings_3d(
         headings = create_sample(x=x, y=y, z=z, initial_radius=1.0)
         labels = None
 
-    # Build lattice and assign headings to each lattice site
     lat = Lattice(x, y, z, spacing=1.0)
     lat.populate_lattice(headings)
 
-    # Extract positions (from indices) and headings (from stored data)
     positions_list = []
     heading_list = []
-
     for i in range(lat.x):
         for j in range(lat.y):
             for k in range(lat.z):
@@ -614,31 +610,71 @@ def visualize_initial_headings_3d(
                 positions_list.append(pos)
                 heading_list.append(h)
 
-    positions = np.vstack(positions_list)   # (N, 3)
-    H = np.vstack(heading_list)            # (N, 3)
+    positions = np.vstack(positions_list)
+    H = np.vstack(heading_list)
 
     fig = plt.figure()
     ax = fig.add_subplot(111, projection="3d")
 
-    # Plot lattice points
-    ax.scatter(
-        positions[:, 0],
-        positions[:, 1],
-        positions[:, 2],
-        color="k",
-        s=20,
-        alpha=0.6,
-    )
+    if two_swarms and labels is not None:
+        mask_a = labels == 0
+        mask_b = labels == 1
 
-    # Small arrows from each lattice point in heading direction
-    ax.quiver(
-        positions[:, 0], positions[:, 1], positions[:, 2],
-        H[:, 0], H[:, 1], H[:, 2],
-        length=0.3,
-        normalize=True,
-        color="tab:blue",
-        linewidth=1,
-    )
+        # Scatter lattice points per swarm
+        ax.scatter(
+            positions[mask_a, 0],
+            positions[mask_a, 1],
+            positions[mask_a, 2],
+            color="tab:blue",
+            s=25,
+            alpha=0.7,
+            label="Swarm A",
+        )
+        ax.scatter(
+            positions[mask_b, 0],
+            positions[mask_b, 1],
+            positions[mask_b, 2],
+            color="tab:orange",
+            s=25,
+            alpha=0.7,
+            label="Swarm B",
+        )
+
+        # Quiver per swarm
+        ax.quiver(
+            positions[mask_a, 0], positions[mask_a, 1], positions[mask_a, 2],
+            H[mask_a, 0], H[mask_a, 1], H[mask_a, 2],
+            length=0.3,
+            normalize=True,
+            color="tab:blue",
+            linewidth=1,
+        )
+        ax.quiver(
+            positions[mask_b, 0], positions[mask_b, 1], positions[mask_b, 2],
+            H[mask_b, 0], H[mask_b, 1], H[mask_b, 2],
+            length=0.3,
+            normalize=True,
+            color="tab:orange",
+            linewidth=1,
+        )
+        ax.legend(loc="upper right", fontsize=8)
+    else:
+        ax.scatter(
+            positions[:, 0],
+            positions[:, 1],
+            positions[:, 2],
+            color="k",
+            s=20,
+            alpha=0.6,
+        )
+        ax.quiver(
+            positions[:, 0], positions[:, 1], positions[:, 2],
+            H[:, 0], H[:, 1], H[:, 2],
+            length=0.3,
+            normalize=True,
+            color="tab:blue",
+            linewidth=1,
+        )
 
     ax.set_xlabel("x")
     ax.set_ylabel("y")
@@ -648,11 +684,10 @@ def visualize_initial_headings_3d(
         + (" (two swarms)" if two_swarms else " (single swarm)")
     )
 
-    # Make axes roughly equal for better visual
     max_range = (positions.max(axis=0) - positions.min(axis=0)).max()
     mid = positions.mean(axis=0)
-    for axis, m in zip([ax.set_xlim, ax.set_ylim, ax.set_zlim], mid):
-        axis(m - max_range / 2, m + max_range / 2)
+    for axis_set, m in zip([ax.set_xlim, ax.set_ylim, ax.set_zlim], mid):
+        axis_set(m - max_range / 2, m + max_range / 2)
 
     plt.show()
 
@@ -720,10 +755,10 @@ def overlay_two_swarm_vs_random(
 
 if __name__ == "__main__":
     start_time = time()
-    t1()
+    #t1()
     #two_swarm_test()
     #overlay_two_swarm_vs_random(x=9, y=9, z=9, steps=600, t_span=(0.0, 10.0))
-    #visualize_initial_headings_3d(x=5, y=5, z=5, two_swarms=False)
+    visualize_initial_headings_3d(x=5, y=5, z=5, two_swarms=True)
 
 
     print()

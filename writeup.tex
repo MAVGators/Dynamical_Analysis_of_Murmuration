@@ -7,6 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{tikz}
+\usepackage{float}
 \usetikzlibrary{calc}
 
 % Page layout and header/footer
@@ -62,6 +63,7 @@
 
 
 \usepackage{graphicx}
+\usepackage{subcaption}
 \graphicspath{{figures/}{results/}}
 
 
@@ -354,39 +356,38 @@ for brids to pay attention to more birds at any given time. I finally ran severa
 over a sweep of initial alignments, orders, and weights, over a variety 
 of flock sizes to determine which values created realistic flocking behavior.
 
-\subsubsection{Results}
-\begin{figure}
+\subsubsection{Computational Results}
+\begin{figure}[ht]
     \centering
-
     % Top row
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{initial_heading_1s.png}
         \caption{Intial Headings with $A=0.5$.}
         \label{fig:order1-A02}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{order1_highA}
-        \caption{Order 1, initial alignment $A=0.8$.}
+        \includegraphics[width=\textwidth]{bad_conv_1.png}
+        \caption{Allignment Convergence for Order 1, initial alignment $A=1$.}
         \label{fig:order1-A08}
     \end{subfigure}
 
     \vspace{0.5em}
 
     % Bottom row
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{order2}
-        \caption{Order 2, initial alignment $A=0.2$.}
+        \includegraphics[width=\textwidth]{good_conv_1.png}
+        \caption{Allignment Convergence for Order 1, initial alignment $A=0.5$.}
         \label{fig:order2-A02}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{order2_highA}
-        \caption{Order 2, initial alignment $A=0.8$.}
+        \includegraphics[width=\textwidth]{mid_conv_1.png}
+        \caption{Allignment Convergence for Order 2, initial alignment $A=0.3$.}
         \label{fig:order2-A08}
     \end{subfigure}
 
@@ -399,29 +400,231 @@ of flock sizes to determine which values created realistic flocking behavior.
 %    -explain the parameters found
 %    -talk about cool behavior with interacting swarms
 %
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{sos_convergence_overlay.png}
+    \caption{Order 1 simulation result.}
+    \label{fig:overlay}
+\end{figure}
+From the results of the experiments, and primarily figure \ref{fig:overlay}, we conclude
+two main results. First, higher order interactions converge slower than order 1 interactions, 
+and second, there appears to be a critical alignment value $A_c >0.5$ such that for $A<A_c$ swarms converge to allignment, and for $A>A_c$ swarms diverge to disallignment, or at the very 
+least converge too slowly to be realistic. This leads us to assume that 
+real world flocking behavior is best modeled by order 1 interactions with initial alignments below $A_c$.
+\\
+
+While order 1 interactions seem physcially intuitive, as you wouldn't expect brids to be tracking huge numbers of negihbors at a time, the results regarding intial alligment beg several questions.
+While it makes sense that after an intial period of congregation birds in a component
+would generally be partially alligned, this begs the question of how would flocks intially form given that intial alignment is likely 0. To anwser this question I turned into \textbf{swarm collision}.
+\\
+
+\subsubsection{Swarm Collisions}
+While playing around with the simulation I noticed an interesting behavior that if two 
+swarms with low total alignment, had subgroups that were highly alligned, then the solution 
+would rapidly converge to allignment. This led me to experiment wiht the idea of \textbf{swarm collision}
+
+\begin{definition}
+    A \textbf{swarm collision} is defined as when two alligned components $(C_1,r_1)$ and $(C_2,r_2)$ physically overlap in
+    position space such that their interactions can be modeled as a single component $(C,r)$ with $C=C_1\cup C_2$ and $r=\max(r_1,r_2)$, 
+    and the lattice represneting the system made with birds from $C_1$ and $C_2$ are randomly mixed. (ex. figure \ref{fig:swarm-collision}).
+\end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{swarm_collisions_lattice.png}
+    \caption{Intial Headings between two colliding swarms}
+    \label{fig:swarm-collision}
+\end{figure}
+
+I simulated these collisions and compared their convergence to that of a single swarm with no
+intial allignment. The results are presented in figure \ref{fig:2s} and \ref{fig:collision-overlay}. 
+You can see in figure \ref{fig:collision-overlay} that despite having near identical intial headings
+the two swarm collision converges significantly faster than the random initial allignment case.
+
+\begin{figure}[ht]
+    \centering
+    % Top row
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{initial_heading_2s.png}
+        \caption{Swarm Collision $t=0$}
+        \label{fig:ih_2s1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ih_2s2.png}
+        \caption{Swarm Collision $t=1$}
+        \label{fig:ih_2s2}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % Bottom row
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ih_2s3.png}
+        \caption{Swarm Collision $t=2.5$}
+        \label{fig:ih_2s3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ih_2s4.png}
+        \caption{Swarm Collision $t=5$}
+        \label{fig:ih_2s4}
+    \end{subfigure}
+
+    \caption{Evolution of Two Swarm Collision}
+    \label{fig:2s}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{sos_two_swarm_vs_random.png}
+    \caption{Two Swarm Collision vs Random Initial Alignment}
+    \label{fig:collision-overlay}
+\end{figure}
+
+\subsection{Analytical Results}
+From setions (3.1.1) and (3.1.2) we fully define $F$ in (2.1) as the RHS of (3.2) with an order 1 interaction matrix $R$.
+Now we can analyze the stability of solutions to (3.2) under these conditions.
+
+First let us determine the asymptotic behavior of solutions to (3.2). 
+\begin{theorem}[Solutions to (3.2) are Asymptotically Stable]\label{thm:asymptotic_stability}
+\end{theorem}
+\begin{proof}
+    Let $\theta_i(t)$ be a solution to (3.2) with interaction matrix
+
+Let $\T=(\theta_1, \theta_2, \ldots, \theta_n)$ Define a Lyapunov function
+\begin{align}
+    V_i(\T) &= \frac12 \sum_{j=1}^N R_{ij}(1-\langle \theta_j, \theta_i \rangle)\\
+    V(\T) &= \sum_{i=1}^N V_i(\T)
+\end{align}
+Since $\|\theta_i\|=1 \ \forall i$ and from (3.1) we have that $R_{ij}\geq 0 \ \forall i,j$
+we have that $V(\T)\geq 0 \ \forall \T$, and since $R$ is overlapping (neighborhood of each bird intersects with 6 other birds in 3D) $V(\T)=0$ iff $\theta_i=\theta_j \ \forall i,j$.
+
+Now we calculate $\dot V(\T)$ along solutions to (3.2)
+\begin{align}
+    \dot V(\T) &= \frac{\partial V}{\partial t} + 
+    \frac{\partial V}{\partial \T}{f} \\
+    &= 0 + \sum_{i=1}^N \sum_{j=1}^N \frac{\partial V_i}{\partial \theta_j} \cdot f_j \\
+    &= \sum_{i=1}^N \langle \frac{\partial V}{\partial \theta_i}, \dot \theta_i \rangle
+\end{align}
+Now note that since the interaction matrix $R$ is symmetric we have that
+\begin{align}
+    \frac{\partial V}{\partial \theta_i} &= \sum_{j=1}^N \frac{\partial V_j}{\partial \theta_i} \\
+    &= -\sum_{j=1}^N R_{ji} \theta_j
+\end{align}
+Noting that from (3.2) we have that
+\begin{align}
+    \dot \theta_i = f_i &= \sum_{j=1}^N R_{ij}\theta_j - \sum_{j=1}^N \langle \theta_j, \theta_i \rangle \theta_i\\
+    &= -\frac{\partial V}{\partial \theta_i} + \langle \frac{\partial V}{\partial \theta_i}, \theta_i \rangle \theta_i
+\end{align}
+Letting $P_i = -\sum_{j=1}^N R_{ji} = \frac{\partial V}{\partial \theta_i}$ we can substitute in to 
+(3.8) to get 
+\begin{align}
+\dot V(\T) &=  - \sum_{i=1}^N \langle P_i, P_i - \langle P_i, \theta_i \rangle \theta_i \rangle \\
+&= - \sum_{i=1}^N \left( \|P_i\|^2 - \langle P_i, \theta_i \rangle^2 \right)
+\end{align}
+Finally realize that 
+\begin{align}
+    \|f_i\|^2 &= \|P_i - \langle P_i, \theta_i \rangle \theta_i\|^2 \\
+    &= \|P_i\|^2 - 2\langle P_i, \theta_i \rangle^2 + \langle P_i, \theta_i \rangle^2\|\theta_i\|^2\\
+    &= \|P_i\|^2 - \langle P_i, \theta_i \rangle^2
+\end{align}
+Where (3.17) holds since our headings live on the unit sphere. Therefore substituting (3.17) into (3.15) we get
+\begin{align}
+    \dot V(\T) &= - \sum_{i=1}^N \|f_i\|^2\\
+    &\leq 0
+\end{align}
+Finally by again noting that $R$  is overlapping and all non-zero entires equal we have that $\dot V(\T)=0$ iff $\theta_i=\theta_j \ \forall i,j$.
+Thus since  $\theta_i=\theta_j \ \forall i,j$ is also our condition for $V(\T)=0$ we have that by Lyapunov's direct method that
+all solutions to (3.2) are globaly uniformly asymptotically stable.  \cite{lyapunov_stability_theory} 
+\qedhere
+\end{proof}
 
 
 
-\section{Methods}
-% Describe experimental / computational methods, algorithms, data.
 
-\section{Results}
-% Present results, figures, tables.
+
+\subsection{Conclusion from SOS Analysis}
+From the computational experiments we can conclude a few key points regarding the formation and behavior of 
+bird flocks. First, individual birds in a flock likely only monitor the headings of their order 1 ($6$ in 3D) neighbors when 
+turning. Next, there exists a critical intial alignemnt $A_c$ such that flocks with $A<A_c$ will rapidly 
+converge to allignment when flying. Finally the results of section (3.1.3) conclusion leads us to the final (and in my opinion most interesting) conclusion
+that large bird flocks form from the collision of smaller, already aligned sub-swarms, building the size of the flock over time. 
+tu
+\\
+
+Finally from theorem \ref{thm:asymptotic_stability} we have that under the SOS model (3.2) all swarms will eventually converge to allignment, 
+regardless of intial alignment. This reinforces the convergence result from the computational experinces, and also clarrifies
+that $A_c$ is not a rigoroud cirtical point rather points with lower initial allignment simply converge many orders faster than those with higher initial allignment.
+
+
+\section{Heisenberg Model Analysis}
+While section 3 anwsered some key questions regarding flock behavior, primarily 
+flock formation interaction order and stability, the question of the speed of information
+flow and response to a predator attack remains. 
+
+I first thought of using the Heisenberg model when I looked at figure \ref{fig:swarm-collision} and saw that
+the headings of the birds in a lattice resembeled the spins of particles in an antiferromagnetic material 
+(a material where the lowest energy states are when spins are anti-parrell), and when they reach 
+allignment they resembeled the spins of particles in a ferromagnetic material (a material where the lowest energy states are when spins are parrell).
+\\
+
+And this is where the Heisenberg model comes in. The Heisenberg model is a statistical mechanics model
+that models the spins of particles in a lattice ferromagnetic or antiferromagnetic material. The hamiltonian for such a system is given by
+\begin{equation}
+    H =  -J\sum_{\langle i,j \rangle} S_i \cdot S_j - \mu \sum_i B \cdot S_i
+\end{equation}
+Where $S_i$ is the spin vector of particle $i$, $J$ is the interaction strength between direct neighboring spins $\langle i,j \rangle$ , $\mu$ is the magnetic moment, and $B$ is an external magnetic field \cite{heisenberg_model_pires}.
+If $J>0$ the lowest energy states are those such that all spins are parallel so the material is ferromagentic. For our puproses 
+we use say our system is "ferromagnetic" because we want the flock to tend to a state where all brids are alligned in the same direction.
+
+Solutions to this system are usually analytically intractable, so we introudce a final simplifcation of the system.
+\begin{assumption}
+    For the purposes of modeling the speed of information flow, it suffices to consider heading to be a discrete variable in $\{-1,1\}$.
+    \begin{rationale}
+    While in sections 2 and 3 heading was modeled as a continuous variable in this section we are less concerned about \textit{how} birds
+    allign and more concerned about how \textit{fast} they allign, and making this simplfication allows us to simplify to a model that is analytically tractable. 
+\end{rationale}
+\end{assumption}
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Discussion}
-% Interpret results, limitations, future work.
 
 \section{Conclusion}
-% Short concluding remarks.
 
-\section*{Acknowledgments}
-% Acknowledgments (optional).
+\section*{AI Disclaimer}
+ChatGPT was used for very specific parts of this
+project. The following are the ONLY parts which AI was 
+in any way involved with:
+\begin{itemize}
+    \item The Tikz drawing in figure \ref{fig:order2-2d} was generated with the help of ChatGPT.
+    
+    \item The formating to get the subfigures in figure \ref{fig:order-A-grid} and \ref{fig:2s} side by side was 
+    assisted by ChatGPT.
+
+    \item As noted in the header note of the SOS.py, AI was used to 
+    help write certain plotting and visualization functions, however all computational experiments, testing,
+    and analysis were written SOLEY by me
+    \item An online template and AI were used at the very beginning
+    of this project to format a blank latex document with formatting, 
+    but absolutely no content was populated during this phase
+\end{itemize}
 
 \appendix
 \section{Supplementary material}
-% Appendices for derivations, extra figures, etc.
 
-% Bibliography
 \printbibliography
 
 \end{document}

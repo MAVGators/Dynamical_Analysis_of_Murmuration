@@ -112,6 +112,32 @@
       \verb https://doi.org/10.1073/pnas.0711437105
       \endverb
     \endentry
+    \entry{lyapunov_stability_theory}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=3fa6b96b5d3506325be293be5131cdde}{%
+           family={Murray},
+           familyi={M\bibinitperiod},
+           given={R.\bibnamedelimi M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3fa6b96b5d3506325be293be5131cdde}
+      \strng{fullhash}{3fa6b96b5d3506325be293be5131cdde}
+      \strng{fullhashraw}{3fa6b96b5d3506325be293be5131cdde}
+      \strng{bibnamehash}{3fa6b96b5d3506325be293be5131cdde}
+      \strng{authorbibnamehash}{3fa6b96b5d3506325be293be5131cdde}
+      \strng{authornamehash}{3fa6b96b5d3506325be293be5131cdde}
+      \strng{authorfullhash}{3fa6b96b5d3506325be293be5131cdde}
+      \strng{authorfullhashraw}{3fa6b96b5d3506325be293be5131cdde}
+      \field{labelalpha}{Mur03}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{/mnt/data/mls93-lyap.pdf}}
+      \field{note}{Lecture or excerpt on Lyapunov stability theory. Author and publication details not provided in the document.}
+      \field{title}{Lyapunov Stability Theory}
+      \field{year}{2003}
+    \endentry
     \entry{SOS}{inproceedings}{}{}
       \name{author}{1}{}{%
         {{hash=f7b28f3352eaacebbbc56b73db55a6ea}{%
@@ -149,6 +175,49 @@
       \endverb
       \verb{url}
       \verb https://api.semanticscholar.org/CorpusID:12476303
+      \endverb
+    \endentry
+    \entry{heisenberg_model_pires}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=8691f597e434ddd4d21eb7fbd8364ecf}{%
+           family={Pires},
+           familyi={P\bibinitperiod},
+           given={Antonio\bibnamedelimb Sergio\bibnamedelima Teixeira},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{8691f597e434ddd4d21eb7fbd8364ecf}
+      \strng{fullhash}{8691f597e434ddd4d21eb7fbd8364ecf}
+      \strng{fullhashraw}{8691f597e434ddd4d21eb7fbd8364ecf}
+      \strng{bibnamehash}{8691f597e434ddd4d21eb7fbd8364ecf}
+      \strng{authorbibnamehash}{8691f597e434ddd4d21eb7fbd8364ecf}
+      \strng{authornamehash}{8691f597e434ddd4d21eb7fbd8364ecf}
+      \strng{authorfullhash}{8691f597e434ddd4d21eb7fbd8364ecf}
+      \strng{authorfullhashraw}{8691f597e434ddd4d21eb7fbd8364ecf}
+      \field{labelalpha}{Pir21}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In chapter 1, the Heisenberg model is introduced and the ground state of the ferromagnet and the antiferromagnet is discussed. A short introduction to the Hubbard model is given.}
+      \field{booktitle}{Theoretical Tools for Spin Models in Magnetic Systems}
+      \field{isbn}{978-0-7503-3879-0}
+      \field{series}{2053-2563}
+      \field{title}{The Heisenberg model}
+      \field{type}{Book Chapter}
+      \field{year}{2021}
+      \field{pages}{1-1 to 1\bibrangedash 16}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1088/978-0-7503-3879-0ch1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1088/978-0-7503-3879-0ch1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1088/978-0-7503-3879-0ch1
       \endverb
     \endentry
     \entry{swarm_video_youtube}{misc}{}{}
