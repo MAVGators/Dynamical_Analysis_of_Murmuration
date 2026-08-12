@@ -91,6 +91,7 @@
     \vspace{1.5cm}
     
     {\Large Caiman Moreno-Earle\par}
+    {cmorenoe@caltech.edu\par}
     \vspace{0.5cm}
     
     {\large California Institute of Technology\par}
@@ -103,11 +104,11 @@
 %\maketitle
 
 \begin{abstract}
-In this hurdle we explore the dynamics and information propagation of starling murmurations. 
+In this hurdle, we explore the dynamics and information propagation of starling murmurations. 
 I introduce the Swarm on a Sphere (SOS) model to calculate the number of neighbors each bird tracks and 
-intial alignment effects on flocking behavior ($n=6$). I then use Lyapunov Theory to prove global asymptotic stability of flocking behavior.
+initial alignment effects on flocking behavior ($n=6$). I then use Lyapunov Theory to prove global asymptotic stability of flocking behavior.
 The Heisenberg model, and specifically Glauber dynamics, is adapted from its usual appearance in stat mech for magnetic systems to model  
-the speed of information propoagation and response to predators attacks. I use this to determine the speed of information propagation 
+the speed of information propagation and response to predator attacks. I use this to determine the speed of information propagation 
 at ($\approx0.6s$ to propagate across the swarm), and determine a predator attack response threshold based on field strength and frequency of attack.
 \end{abstract}
 
@@ -117,18 +118,18 @@ at ($\approx0.6s$ to propagate across the swarm), and determine a predator attac
 % \listoftables
 
 \section{Introduction}
-In this hurdle we explore the dynamics and information propagation of starling murmurations. I begin by introducing 
-the theoretical kinematic dynamics and rigorously defining properities of solutions. I then analyze the 
+In this hurdle, we explore the dynamics and information propagation of starling murmurations. I begin by introducing 
+the theoretical kinematic dynamics and rigorously defining properties of solutions. I then analyze the 
 system with two approaches, the Swarm on a Sphere (SOS) model and the Heisenberg model. 
 \\
 
-The SOS model is used to analyze short term flocking behavior and stability. In this section I determine the number 
-of neighbors that each bird tracks, the effect of initial alignment on flocking behavior, how swarms initally form, 
-and finally use Lyapunov Theory to prove asymptotic stability of flocking behavior. 
+The SOS model is used to analyze short-term flocking behavior and stability. In this section, I determine the number 
+of neighbors that each bird tracks, the effect of initial alignment on flocking behavior, how swarms initially form, 
+and finally use Lyapunov Theory to prove the asymptotic stability of flocking behavior. 
 \\
 
 The Heisenberg model, and specifically Glauber dynamics, is adapted from its usual appearance in stat mech for magnetic systems to model  
-the speed of information propoagation and response to predators attacks. In this section I determine the speed of information propagation 
+the speed of information propagation and response to predator attacks. In this section, I determine the speed of information propagation 
 to take approximately $\approx0.6s$ to propagate across the swarm, and determine a predator attack response threshold based on field strength and frequency of attack.
 
 
@@ -147,7 +148,7 @@ may be reached from any other bird in the component via a sequence of birds, eac
     All swarms are composed of a finite number of components. 
     \begin{rationale}
         There exists a finite number of birds in the universe (hopefully) and 
-        thus even in the worst case scenario where each bird is its own component, 
+        thus even in the worst-case scenario where each bird is its own component, 
         there will still be a finite number of components.
 \end{rationale}
 \end{assumption}
@@ -156,13 +157,13 @@ may be reached from any other bird in the component via a sequence of birds, eac
     The behavior of birds within a component $(C,r)$ is independent of the behavior of birds outside the component.
     \begin{rationale}
         Information and therefore influence may only be transmitted bird 
-        to bird within a limited radius, for convienience
+        to bird within a limited radius, for convenience
         assume $r$ is chosen to be less than or equal to this radius.
     \end{rationale}
 \end{assumption}
 
 Under assumptions 2.1 and 2.2 it suffices to analyze the behavior of a single component.
-So for now consider a single component $(C,r)$. Let $N=|C|<\infty$ be the number
+So, for now, consider a single component $(C,r)$. Let $N=|C|<\infty$ be the number
 of birds in the component. 
 \begin{definition}
     A \textbf{state} at time $t$ is a vector
@@ -193,12 +194,12 @@ where $F: \R^{6N} \to \R^{6N}$ is a function that encodes interactions between b
 
 
 \begin{assumption}
-    Under small time scales the relative separations, $\|X_i-X_j\|$, of birds
+    Under small time scales, the relative separations, $\|X_i-X_j\|$, of birds
     in the swarm can be considered constant.
     \begin{rationale}
-        Studies have determined that topological properties (i.e. closest neighbors not metric distance of closest neighbors)
-        matter more in bird flocking behavior than metric distance, so for small time scales we can assume
-        that distances between birds remain constant without affecting end behavior of system
+        Studies have determined that topological properties (i.e. closest neighbors, not metric distance of closest neighbors)
+        matter more in bird flocking behavior than metric distance, so for small time scales, we can assume
+        that distances between birds remain constant without affecting the end behavior of the system
         \cite{ballerini2008interaction}
     \end{rationale} 
 \end{assumption}
@@ -215,23 +216,23 @@ we can define the separation $N \times N$ matrix $K(t)$, constructed as \(K_{i,j
     \end{bmatrix}
 \end{equation}
 
-Under a small time scale $t\in(t_0,t_0+\delta)$, we can consider $K(t)$ to be constant matrix by assumption 2.5, which we
-will denote $K$. The final simplification we make is to furhter restrict positions $X_i(t)$ to be in a lattice structure, 
-to simplfiy analysis and neiborhood computations.
+Under a small time scale $t\in(t_0,t_0+\delta)$, we can consider $K(t)$ to be a constant matrix by assumption 2.5, which we
+will denote $K$. The final simplification we make is to further restrict positions $X_i(t)$ to be in a lattice structure, 
+to simplify analysis and neighborhood computations.
 
 \begin{assumption}
     Under a small time scale, the positions $X_i(t)$ of birds in the component are fixed on a lattice structure in $\R^3$.
     \begin{rationale}
-        From assumption 2.5 we know that under a small time scale the relative separations of birds remain constant,
+        From assumption 2.5 we know that under a small time scale, the relative separations of birds remain constant,
         now also referring to \cite{ballerini2008interaction} we know that birds
         focus more on topological neighbors rather than metric neighbors, so since 
-        for this model we are more concerned about turning and heading information rather than exact positions
+        got this model, we are more concerned about turning and heading information rather than exact positions
         we can assume a lattice structure.
     \end{rationale}
 \end{assumption}
 
 
-Now for a small time scale equation (2.1) can be rewritten as a system of first oder ODEs
+Now, for a small time scale, equation (2.1) can be rewritten as a system of first-oder ODEs
 \begin{equation}
     \begin{cases}
     \displaystyle \frac{\mathrm{d}\theta_i(t)}{\mathrm{d}t} = f_i(\theta_1(t), \theta_2(t), \ldots, \theta_N(t); K), & i=1,2,\ldots,N,\\[6pt]
@@ -244,19 +245,19 @@ Let $F$ be as defined in (2.1), then there exists a unique local solution corres
 \end{theorem}
 
 \begin{proof}
-From assumption 2.5 we know that $F$ is differentiable and therefore by MVT locally lipschitz in $\Psi$ on a neighborhood of $\Psi_0$.
-Now it follows that for each $f_i$ in (2.3), $f_i$ is also locally lipschitz in $\theta_j$ on a neighborhood of $\theta_{j,0}$. therefore
-by Picard–Lindelöf theorem there exist unique solutions (2.3) for small time scales.
+From assumption 2.5, we know that $F$ is differentiable and therefore by MVT locally Lipschitz in $\Psi$ on a neighborhood of $\Psi_0$.
+Now it follows that for each $f_i$ in (2.3), $f_i$ is also locally Lipschitz in $\theta_j$ on a neighborhood of $\theta_{j,0}$. Therefore
+by Picard–Lindelöf theorem, there exist unique solutions (2.3) for small time scales.
 \end{proof}
 
 The remainder of this paper will focus on analyzing the solutions to this system of equations, 
 with a second order variation of this system being considered in section [TBD].
 
 \section{Swarm on a Sphere Analysis}
-As discussed in the introduction the two main methods we will use to analyze the first-order system (2.3), are the 
-Swarm on a Sphere (SOS) model and the Heisenberg model. First we will examine this system through the SOS approach.
+As discussed in the introduction, the two main methods we will use to analyze the first-order system (2.3), are the 
+Swarm on a Sphere (SOS) model and the Heisenberg model. First, we will examine this system through the SOS approach.
 To build up to SOS we first introduce the Kuramoto model. The Kuramoto model is a model in mathematical physics to describe
- a system of synchronizing oscillators. that take the from 
+ a system of synchronizing oscillators. 
 \begin{equation}
     \begin{cases}
             \frac{d\psi_i}{dt}=\omega_i + \frac1N \sum_{j=1}^N R_{ij} sin(\psi_j-\psi_i)\\
@@ -268,44 +269,44 @@ Where $\psi_i$ represents the phase of the $i$th oscillator, $\omega_i$ its natu
 While I would have loved to use Kuramoto to model the heading in (2.3), the main 
 limitation is that $\psi_i(t)\in \R^2$, while accurately modeling (2.3) requires $\theta_i(t)\in \R^3$ (again assumed normalized).
 
-The generalization of this model to $d-dim$ is the the Swarm on a Sphere (SOS) model \cite{SOS}, which models
+The generalization of this model to $d-dim$ is the Swarm on a Sphere (SOS) model \cite{SOS}, which models
 coupled oscillators on $\mathbb{R}^d$. Where in our context $d=2$ and the oscillators represent the heading of each bird in the swarm.
-SOS is given by the follwing 
+SOS is given by the following 
 \begin{equation}
         \frac{dx_i}{dt}=\sum_{j=1}^N R_{ij}(x_j-\langle x_j,x_i\rangle x_i)\\ 
 \end{equation}
 
-Where $x_i\in \mathbb{R}^d$ is the unit vector of bird $i$ in the swarm, and $R_{ij}$ the interaction strength between birds $i$ and $j$.
+Where $x_i\in \mathbb{R}^d$ is the unit vector of bird $i$ in the swarm, and $R_{ij}$ is the interaction strength between birds $i$ and $j$.
 We get that $\theta_i = x_i$. and thus \(f_i\) is given by the RHS of (3.2). Before analyzing (3.2) analytically, 
 we first numerically experiment to determine key parameters that affect the behavior of the system, then we
 analyze the system to determine stability and long term behavior of solutions. 
 
 \subsection{Computational Experiments}
 \subsubsection{Implementation}
-The goal of the computational experimetns was to numerically determine 2 key parameters that affect the behavior,
-namely the intial allginment and the interaction matrix $R$.
+The goal of the computational experiments was to numerically determine 2 key parameters that affect the behavior,
+namely the initial alignment and the interaction matrix $R$.
 \begin{definition}
     The \textbf{initial alignment} of a component $(C,r)$ is defined as 
     \[
         A = \frac{1}{N} \left\| \sum_{i=1}^N \theta_{i,0} \right\| \in [0,1].
     \]
-    Where $A=1$ represents perfect initial allignment (all birds facing the same direction) and $A=0$ represents
-     initial disallignment (birds in random directions).
+    Where $A=1$ represents perfect initial alignment (all birds facing the same direction) and $A=0$ represents
+     initial disalignment (birds in random directions).
 \end{definition}
 
-To accomplish this I wrote a python simulation that numerically solves (3.2) on a 3D lattice using scip's IVP solver.
+To accomplish this I wrote a python simulation that numerically solves (3.2) on a 3D lattice using scipy's IVP solver.
 The simulation works by approximating a component $(C,r)$ on a $X\times Y\times Z$ 3D lattice with edge length $r$ between lattice points, and 
 $N=X \times Y \times Z$. Each vertex represents a bird with an associated heading (unit vector in $\R^3$). 
 \\
 
-To intialzie the simulation takes in the size of the flock $(X,Y,Z)$, an initial alignment $A$ which 
-is what determiens the distribution of initial headings of the birds, and an intteraction matrix $R$.
-Since from \cite{ballerini2008interaction} we know that interactions are based off of topological neighbors,
+To initialize the simulation takes in the size of the flock $(X,Y,Z)$, an initial alignment $A$ which 
+is what determines the distribution of initial headings of the birds, and an interaction matrix $R$.
+Since from \cite{ballerini2008interaction} we know that interactions are based on topological neighbors,
 the interaction matrix $R$ is constructed based off of \textbf{order}, and \textbf{weight}.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{lattice_headings.png}
-    \caption{Visualization of Initial Heading Allginents on Lattice}
+    \caption{Visualization of Initial Heading Alignments on Lattice}
 \end{figure}
 
 \begin{definition}
@@ -384,8 +385,8 @@ accurately determine the appropriate order I give every bird a constant "attenti
 \begin{equation}
     At = \sum_{j=1}^N R_{ij}, \quad \forall i=1,2,\ldots,N.
 \end{equation}   
-This means that as order increases, the weight must decrease simulating that it is harder
-for brids to pay attention to more birds at any given time. I finally ran several simulation 
+This means that as order increases, the weight must decrease, simulating that it is harder
+for brids to pay attention to more birds at any given time. I finally ran several simulations 
 over a sweep of initial alignments, orders, and weights, over a variety 
 of flock sizes to determine which values created realistic flocking behavior.
 
@@ -414,14 +415,14 @@ of flock sizes to determine which values created realistic flocking behavior.
     \begin{subfigure}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{good_conv_1.png}
-        \caption{Allignment Convergence for Order 1, initial alignment $A=0.5$.}
+        \caption{Alignment Convergence for Order 1, initial alignment $A=0.5$.}
         \label{fig:order2-A02}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{mid_conv_1.png}
-        \caption{Allignment Convergence for Order 2, initial alignment $A=0.3$.}
+        \caption{Alignment Convergence for Order 2, initial alignment $A=0.3$.}
         \label{fig:order2-A08}
     \end{subfigure}
 
@@ -442,25 +443,25 @@ of flock sizes to determine which values created realistic flocking behavior.
 \end{figure}
 From the results of the experiments, and primarily figure \ref{fig:overlay}, we conclude
 two main results. First, higher order interactions converge slower than order 1 interactions, 
-and second, there appears to be a critical alignment value $A_c >0.5$ such that for $A<A_c$ swarms converge to allignment, and for $A>A_c$ swarms diverge to disallignment, or at the very 
+and second, there appears to be a critical alignment value $A_c >0.5$ such that for $A<A_c$ swarms converge to alignment, and for $A>A_c$ swarms diverge to disalignment, or at the very 
 least converge too slowly to be realistic. This leads us to assume that 
 real world flocking behavior is best modeled by order 1 interactions with initial alignments below $A_c$.
 \\
 
-While order 1 interactions seem physcially intuitive, as you wouldn't expect brids to be tracking huge numbers of negihbors at a time, the results regarding intial alligment beg several questions.
-While it makes sense that after an intial period of congregation birds in a component
-would generally be partially alligned, this begs the question of how would flocks intially form given that intial alignment is likely 0. To anwser this question I turned into \textbf{swarm collision}.
+While order 1 interactions seem physically intuitive, as you wouldn't expect birds to be tracking huge numbers of neighbors at a time, the results regarding initial alignment raise several questions.
+While it makes sense that after an initial period of congregation birds in a component
+would generally be partially aligned, this begs the question of how would flocks initially form, given that initial alignment is likely 0. To anwser this question I turned into \textbf{swarm collision}.
 \\
 
 \subsubsection{Swarm Collisions}
-While playing around with the simulation I noticed an interesting behavior that if two 
-swarms with low total alignment, had subgroups that were highly alligned, then the solution 
-would rapidly converge to allignment. This led me to experiment wiht the idea of \textbf{swarm collision}
+While playing around with the simulation, I noticed an interesting behavior: if two 
+swarms with low total alignment had subgroups that were highly aligned, then the solution 
+would rapidly converge to alignment. This led me to experiment with the idea of \textbf{swarm collision}
 
 \begin{definition}
     A \textbf{swarm collision} is defined as when two alligned components $(C_1,r_1)$ and $(C_2,r_2)$ physically overlap in
     position space such that their interactions can be modeled as a single component $(C,r)$ with $C=C_1\cup C_2$ and $r=\max(r_1,r_2)$, 
-    and the lattice represneting the system made with birds from $C_1$ and $C_2$ are randomly mixed. (ex. figure \ref{fig:swarm-collision}).
+    and the lattice representing the system made with birds from $C_1$ and $C_2$ is randomly mixed. (ex. figure \ref{fig:swarm-collision}).
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -470,9 +471,9 @@ would rapidly converge to allignment. This led me to experiment wiht the idea of
 \end{figure}
 
 I simulated these collisions and compared their convergence to that of a single swarm with no
-intial allignment. The results are presented in figure \ref{fig:2s} and \ref{fig:collision-overlay}. 
-You can see in figure \ref{fig:collision-overlay} that despite having near identical intial headings
-the two swarm collision converges significantly faster than the random initial allignment case.
+initial alignment. The results are presented in figure \ref{fig:2s} and \ref{fig:collision-overlay}. 
+You can see in figure \ref{fig:collision-overlay} that despite having near identical initial headings
+the two swarm collision converges significantly faster than the random initial alignment case.
 
 %again as mentioned in disclaimer this figure's formating was AI generated
 \begin{figure}[ht]
@@ -520,7 +521,7 @@ the two swarm collision converges significantly faster than the random initial a
 \end{figure}
 
 \subsection{Analytical Results}
-From setions (3.1.1) and (3.1.2) we fully define $F$ in (2.1) as the RHS of (3.2) with an order 1 interaction matrix $R$.
+From sections (3.1.1) and (3.1.2) we fully define $F$ in (2.1) as the RHS of (3.2) with an order 1 interaction matrix $R$.
 Now we can analyze the stability of solutions to (3.2) under these conditions.
 
 First let us determine the asymptotic behavior of solutions to (3.2). 
@@ -544,7 +545,7 @@ Now we calculate $\dot V(\T)$ along solutions to (3.2)
     &= 0 + \sum_{i=1}^N \sum_{j=1}^N \frac{\partial V_i}{\partial \theta_j} \cdot f_j \\
     &= \sum_{i=1}^N \langle \frac{\partial V}{\partial \theta_i}, \dot \theta_i \rangle
 \end{align}
-Now note that since the interaction matrix $R$ is symmetric we have that
+Now note that since the interaction matrix $R$ is symmetric, we have that
 \begin{align}
     \frac{\partial V}{\partial \theta_i} &= \sum_{j=1}^N \frac{\partial V_j}{\partial \theta_i} \\
     &= -\sum_{j=1}^N R_{ji} \theta_j
@@ -566,14 +567,14 @@ Finally realize that
     &= \|P_i\|^2 - 2\langle P_i, \theta_i \rangle^2 + \langle P_i, \theta_i \rangle^2\|\theta_i\|^2\\
     &= \|P_i\|^2 - \langle P_i, \theta_i \rangle^2
 \end{align}
-Where (3.17) holds since our headings live on the unit sphere. Therefore substituting (3.17) into (3.15) we get
+Where (3.17) holds since our headings live on the unit sphere. Therefore, substituting (3.17) into (3.15) we get
 \begin{align}
     \dot V(\T) &= - \sum_{i=1}^N \|f_i\|^2\\
     &\leq 0
 \end{align}
-Finally by again noting that $R$  is overlapping and all non-zero entires equal we have that $\dot V(\T)=0$ iff $\theta_i=\theta_j \ \forall i,j$.
-Thus since  $\theta_i=\theta_j \ \forall i,j$ is also our condition for $V(\T)=0$. Finally combined with theoreom \ref{thm:existence_uniqueness} we have that by Lyapunov's direct method that
-all solutions to (3.2) are globaly uniformly asymptotically stable.  \cite{lyapunov_stability_theory} 
+Finally, by again noting that $R$  is overlapping and all non-zero entries equal, we have that $\dot V(\T)=0$ iff $\theta_i=\theta_j \ \forall i,j$.
+Thus since  $\theta_i=\theta_j \ \forall i,j$ is also our condition for $V(\T)=0$. Finally, combined with theorem \ref{thm:existence_uniqueness} we have that by Lyapunov's direct method that
+all solutions to (3.2) are global uniformly asymptotically stable.  \cite{lyapunov_stability_theory} 
 \qedhere
 \end{proof}
 
@@ -585,25 +586,25 @@ all solutions to (3.2) are globaly uniformly asymptotically stable.  \cite{lyapu
 From the computational experiments we can conclude a few key points regarding the formation and behavior of 
 bird flocks. First, individual birds in a flock likely only monitor the headings of their order 1 ($6$ in 3D) neighbors when 
 turning. Next, there exists a critical intial alignemnt $A_c$ such that flocks with $A<A_c$ will rapidly 
-converge to allignment when flying. Finally the results of section (3.1.3) conclusion leads us to the final (and in my opinion most interesting) conclusion
+converge to alignment when flying. Finally the results of section (3.1.3) conclusion leads us to the final (and in my opinion most interesting) conclusion
 that large bird flocks form from the collision of smaller, already aligned sub-swarms, building the size of the flock over time. 
 \\
 
-Finally from theorem \ref{thm:asymptotic_stability} we have that under the SOS model (3.2) all swarms will eventually converge to allignment, 
-regardless of intial alignment. This reinforces the convergence result from the computational experinces, and also clarrifies
-that $A_c$ is not a rigoroud cirtical point rather points with lower initial allignment simply converge many orders faster than those with higher initial allignment.
+Finally from theorem \ref{thm:asymptotic_stability}, we have that under the SOS model (3.2) all swarms will eventually converge to alignment, 
+regardless of initial alignment. This reinforces the convergence result from the computational experiences, and also clarifies
+that $A_c$ is not a rigorous critical point rather points with lower initial alignment simply converge many orders faster than those with higher initial alignment.
 
 
 \section{Heisenberg Model Analysis}
 \subsection{Theory}
-While section 3 anwsered some key questions regarding flock behavior, primarily 
+While section 3 answered some key questions regarding flock behavior, primarily 
 flock formation interaction order and stability, the question of the speed of information
-flow and response to a predator attack remains. 
+flow and response to a predator attack remain. 
 
 I first thought of using the Heisenberg model when I looked at figure \ref{fig:swarm-collision} and saw that
-the headings of the birds in a lattice resembeled the spins of particles in an antiferromagnetic material 
-(a material where the lowest energy states are when spins are anti-parrell), and when they reach 
-allignment they resembeled the spins of particles in a ferromagnetic material (a material where the lowest energy states are when spins are parrell).
+the headings of the birds in a lattice resembled the spins of particles in an antiferromagnetic material 
+(a material where the lowest energy states are when spins are anti-parallel), and when they reach 
+alignment they resembled the spins of particles in a ferromagnetic material (a material where the lowest energy states are when spins are parallel).
 \\
 
 And this is where the Heisenberg model comes in. The Heisenberg model is a statistical mechanics model
@@ -612,8 +613,8 @@ that models the spins of particles in a lattice ferromagnetic or antiferromagnet
     H =  -J\sum_{\langle i,j \rangle} S_i \cdot S_j - \mu \sum_i B \cdot S_i
 \end{equation}
 Where $S_i$ is the spin vector of particle $i$, $J$ is the interaction strength between direct neighboring spins $\langle i,j \rangle$ , $\mu$ is the magnetic moment, and $B$ is an external magnetic field \cite{heisenberg_model_pires}.
-If $J>0$ the lowest energy states are those such that all spins are parallel so the material is ferromagentic. For our puproses 
-we use say our system is "ferromagnetic" because we want the flock to tend to a state where all brids are alligned in the same direction.
+If $J>0$, the lowest energy states are those such that all spins are parallel, so the material is ferromagnetic. For our puproses 
+We say our system is "ferromagnetic" because we want the flock to tend to a state where all birds are aligned in the same direction.
 
 \begin{figure}[h]
     \centering
@@ -622,25 +623,25 @@ we use say our system is "ferromagnetic" because we want the flock to tend to a 
     Credit: Image from \cite{manget_lattice}}
 \end{figure}
 
-Solutions to this system are usually analytically intractable, so we introudce a another simplifcation of the system.
+Solutions to this system are usually analytically intractable, so we introduce another simplification of the system.
 \begin{assumption}
     For the purposes of modeling the speed of information flow, it suffices to consider heading to be a discrete variable in $\{-1,1\}$.
     \begin{rationale}
-    While in sections 2 and 3 heading was modeled as a continuous variable in this section we are less concerned about \textit{how} birds
-    allign and more concerned about how \textit{fast} they allign, and making this simplfication allows us to simplify to a model that is analytically tractable. 
+    While in sections 2 and 3, the heading was modeled as a continuous variable in this section, we are less concerned about \textit{how} birds
+    align and more concerned about how \textit{fast} they align, and making this simplification allows us to simplify to a model that is analytically tractable. 
 \end{rationale}
 \end{assumption}
 
-With this assumption the hamiltonian in (4.1) simplifies to the well studied Ising model hamiltonian
+With this assumption, the Hamiltonian in (4.1) simplifies to the well-studied Ising model Hamiltonian
 \begin{equation}
     H = -J\sum_{\langle i,j \rangle} s_i s_j - \mu \sum_i B s_i
 \end{equation}
-Where $s_i \in \{-1,1\}$. In the absence of global information (i.e. predator attack) we
+Where $s_i \in \{-1,1\}$. In the absence of global information (i.e. predator attack), we
 let the external field $B=0$. reducing to the final form before analysis to 
 \begin{equation}
     H = -J\sum_{\langle i,j \rangle} s_i s_j
 \end{equation}
-Now to analyze speed of information flow we introduce the idea of Glauber Dynamics, which describes 
+Now to analyze the speed of information flow, we introduce the idea of Glauber Dynamics, which describes 
 how spins flip over time to reach a thermal equilibrium. 
 
 define a local field around a point $i$ as
@@ -663,7 +664,7 @@ and time evolution given by
     &= -\alpha \left( \langle s_i(t) \rangle - \langle \tanh\left( \frac{h_i}{kT} \right) \rangle \right) \quad \text{\cite{gauber_2}}
 \end{align}
 
-Now to be able to track alginement convergence similiar to initial alignemnt section 3, we define
+Now to be able to track alignment convergence similar to the initial alignment section 3, we define
 the average magnetization $m(t)$ by 
 \begin{equation}
     m(t) = \frac{1}{N} \sum_{i=1}^N \langle s_i(t) \rangle
@@ -675,13 +676,13 @@ Substituting in (4.9) gives
 \end{equation}
 
 Despite assumption (4.1), this system is still intractable for high dimensions and large $N$, 
-primarily because interaction between neigbors in the defintion of $h_i$ become comlex. To simplify 
+primarily because interactions between neighbors in the definition of $h_i$ become complex. To simplify 
 this we introduce a mean field approximation.
 \begin{assumption}
     The local field $h_i$ can be approximated by the mean field $h_i \approx J z m(t)$, where $z$ is the number of direct neighbors in the lattice.
     \begin{rationale}
-        On average the interactions with mangetization of negihbors should be the same
-        as interactions with the average mangetization of the system, 
+        On average the interactions with magnetization of neighbors should be the same
+        as interactions with the average magnetization of the system, 
         so $h_i = J \sum_{\langle i,j \rangle} s_j = J \sum_{\langle i,j \rangle} m(t)= J z m(t)$.
     \end{rationale}
 \end{assumption}
@@ -692,19 +693,19 @@ This gives us our final exact and closed average evolution equation
 \end{equation}
 
 \subsection{Computational Experiments}
-To actually determine the rate of information transfer we must first fully define equation (4.12) for our syste. Now in quantnum physics $\alpha=\frac1\tau$ where $\tau$ represents the time-scale of spin-flips ($\approx 10^{-12}s$) \cite{time_scale},
+To actually determine the rate of information transfer, we must first fully define equation (4.12) for our system. Now in quantum physics $\alpha=\frac1\tau$ where $\tau$ represents the time-scale of spin-flips ($\approx 10^{-12}s$) \cite{time_scale},
 so in our case where $tau$ is the physical change of headings we can take $\tau $ to be the reaction time of a starling $\approx$ $0.1s$ \cite{starling_reaction}, giving $\alpha\approx10 s^{-1}$.
 For the 3D dimensional lattice structure we have $z=6$ direct neighbors, and we can select units (keeping time in seconds, but affecting temperature)
 such that $J=1$ and $k=1$.
 \\
 
 Additionally from our work in section 3 and observation in nature, we know these systems
-very quickly reach allignment, so we can assume that $T\ll T_c$ where $T_c$ is the critical temperature of the system.
+very quickly reach alignment, so we can assume that $T\ll T_c$ where $T_c$ is the critical temperature of the system.
 \\
 
-To numerically solve (4.12) I wrote a python script to solve the ODE using scipy's IVP solver under intial conditions 
+To numerically solve (4.12) I wrote a python script to solve the ODE using scipy's IVP solver under initial conditions 
 of near zero total magnetization ($m_0 = 0.01$).
-As the exact value of $T$ is unkown I swept $T$ over several orders of magnitude to see its effect on convergence. 
+As the exact value of $T$ is unknown I swept $T$ over several orders of magnitude to see its effect on convergence. 
 
 \begin{figure}[H]
     \centering
@@ -719,7 +720,7 @@ in $\approx 0.6s$. This finally gives a numerical estimate of the speed of infor
 
 
 \subsection{Predator Attack Analysis}
-The final question to anwser is how does the flock respond to a predator attack.
+The final question to answer is how does the flock respond to a predator attack.
 To model this we reintroduce the external a time-varying field $B(t)$ in (4.2). This oscillating field 
 is meant to represent the predator attacking a flock from a certain direction before flying through turning around 
 and striking again from the opposite direction. 
@@ -730,7 +731,7 @@ For the purposes of this analysis we simply define
 Where $B_0$ is the strength of the predator attack and $\omega$ the frequency of attacks.
 \\
 
-The reintroduction of $B(t)$ gchanges (4.4) to
+The reintroduction of $B(t)$ changes (4.4) to
 \begin{equation}
     H = -J\sum_{\langle i,j \rangle} s_i s_j - \mu \sum_i B(t) s_i \quad \text{\cite{glauber}}
 \end{equation}
@@ -764,31 +765,31 @@ different types of predator attacks.
 \end{figure}
 
 From figure \ref{fig:predator-attack} we see that there exists a 
-field strength threshold $B_{0c}$ such that for $B_0 < B_{0c}$ the flock remains alligned (predator not detected)
-, and for $B_0 > B_{0c}$ the flock rapidly disalligns (predator detected), before returning to allignment once it has passed. 
-Additionally from figure \ref{fig:b2} we see that for very high frequency attacks the flock never gets a chance to recover, 
-and remains disalligned, while for low frequency attacks the flock has time to recover and allign between attacks.
+field strength threshold $B_{0c}$ such that for $B_0 < B_{0c}$ the flock remains aligned (predator not detected)
+, and for $B_0 > B_{0c}$ the flock rapidly dis-aligns (predator detected), before returning to alignment once it has passed. 
+Additionally ,from figure \ref{fig:b2} we see that for very high frequency attacks the flock never gets a chance to recover, 
+and remains dis-aligned, while for low-frequency attacks, the flock has time to recover and align between attacks.
 In this context it is unlikely that a predator is leaving and coming back to attack $1000$ times a second, but 
-these high frequency scenarios should be taken as when the predator is rapidly changing direction while insde the flock itself.
+These high-frequency scenarios should be taken as when the predator is rapidly changing direction while inside the flock itself.
 
 \section{Conclusion}
 From the analysis of SOS and Heisenberg models we 
-have succesfully developed a rigorous mathematical 
-framework for modelning bird flocking behavior. A key caveat of this work is that 
-almost all analsyis in sections 3 and 4 were reliant on Assumption (2.7) which states that the relative positions 
+have successfully developed a rigorous mathematical 
+framework for modeling bird flocking behavior. A key caveat of this work is that 
+almost all analyses in sections 3 and 4 were reliant on Assumption (2.7) which states that the relative positions 
 of birds in a flock remain constant over short-time, while only relative headings change, this allows us to decouple the position and heading dynamics, 
 and solve both models on a lattice structure greatly simplifying nearest neighbor interactions. An obvious extension would be
-to try to analyze dynamics without this assumption, however I anticipate such an anlysis would be significanlty less rigorous
+to try to analyze dynamics without this assumption, however I anticipate such an analysis would be significantly less rigorous
 and more reliant on computational experiments.
 \\
 
 A final note I would like to add is that if I had more time 
 I would have really liked to reduce to try to see if these results generalize to 
 higher dimensions, and while I don't expect there to be 13 dimensional bird flocks any time soon, I noticed 
-certain intersting behaviors both numerically and analytically when trying to genralize to more dimensions. For 
+certain interesting behaviors both numerically and analytically when trying to generalize to more dimensions. For 
 example the global asymptotic stability result in theorem \ref{thm:asymptotic_stability} is reliant on 
-the interaction matrix $R$ being overlapping and impliclty the number of orthagonal vectors in $\R^3$ is 3 is less than the number of nearest neighbors (6), however In
-lower (and perhaps higher with different interaction sturcutres) dimension this result is not neccesarily true 
+the interaction matrix $R$ being overlapping and implicitly the number of orthogonal vectors in $\R^3$ is 3 is less than the number of nearest neighbors (6), however In
+lower (and perhaps higher with different interaction structures) dimension this result is not necessarily true 
 so the proof could be invalid and you could potentially have non-alligned stable states which would be interesting to look into. 
 
 If you would like to look into any computational experiments used for this
@@ -811,6 +812,7 @@ in any way involved with:
     \item An online template and AI were used at the very beginning
     of this project to format a blank latex document with formatting, 
     but absolutely no content was populated during this phase
+    \item Used Grammarly spell check ONLY for grammar check (no clarity or rewriting)
 
 \end{itemize}
 

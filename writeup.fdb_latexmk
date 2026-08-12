@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber writeup"] 1763976352.1166 "writeup.bcf" "writeup.bbl" "writeup" 1763986683.73024 0
+["biber writeup"] 1763976352.1166 "writeup.bcf" "writeup.bbl" "writeup" 1775586864.54802 0
   "refs.bib" 1763973447 5580 370e845dd0ddfc67bff81afa0729bcd9 ""
-  "writeup.bcf" 1763986683 110540 f9d579d189487f5bb62ddcf1749f5329 "pdflatex"
+  "writeup.bcf" 1775586864 110540 f9d579d189487f5bb62ddcf1749f5329 "pdflatex"
   (generated)
   "writeup.bbl"
   "writeup.blg"
   (rewritten before read)
-["pdflatex"] 1763986679.66365 "c:/Users/caima/OneDrive/Desktop/Physics and Shit/Phys11/Ph-11-ImDaBiggestBird/writeup.tex" "writeup.pdf" "writeup" 1763986683.73167 0
-  "C:/Users/caima/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1763938704 81245 b430549db98beb1d3a03071ea49cab66 ""
+["pdflatex"] 1775586858.26706 "c:/Users/caima/OneDrive/Desktop/Physics and Shit/Phys11/Ph-11-ImDaBiggestBird/writeup.tex" "writeup.pdf" "writeup" 1775586864.54872 0
+  "C:/Users/caima/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1764738370 81245 b430549db98beb1d3a03071ea49cab66 ""
   "C:/Users/caima/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1763744586 25420 2af878d44a05b94276613efae4325eb6 ""
   "C:/Users/caima/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1763744583 28976 44a7a4edf8c8b4c5fc896c4bfa0534cf ""
   "C:/Users/caima/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1763883030 31952 31036377863157656e539bf4e2720bf7 ""
@@ -230,7 +230,7 @@
   "C:/Users/caima/AppData/Local/Programs/MiKTeX/tex/latex/tools/xspace.sty" 1749468414 4545 d7bb86d489a8ad5263e4c34304c03aee ""
   "C:/Users/caima/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/caima/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/caima/OneDrive/Desktop/Physics and Shit/Phys11/Ph-11-ImDaBiggestBird/writeup.tex" 1763986675 40236 f09de5f8121956277b9422dcf01c5f0b ""
+  "c:/Users/caima/OneDrive/Desktop/Physics and Shit/Phys11/Ph-11-ImDaBiggestBird/writeup.tex" 1764015832 40376 55474c3f4889993f64c54d30e933d939 ""
   "figures/Alignment_Convergence.png" 1763974928 38185 6e88f7f5a314836684d9251174da5c61 ""
   "figures/Bird Attack.png" 1763982719 71682 ce2925a402ca9f41dee1d400f8b40022 ""
   "figures/Bird Attack_freq.png" 1763983169 116509 5af71e44e05eba8ff8862edb7bc7f127 ""
@@ -247,12 +247,12 @@
   "results/good_conv_1.png" 1763882620 24744 df71881b24a48fe6ee08e86323f7ee64 ""
   "results/mid_conv_1.png" 1763882627 25847 eca6f0a938c5bef8565caeb376aad598 ""
   "results/sos_convergence_overlay.png" 1763882650 105406 65a0b29cc04f3da56476b501e3f1e767 ""
-  "writeup.aux" 1763986683 9908 294d224749b6a452b284f0e77a25ca2f "pdflatex"
+  "writeup.aux" 1775586864 9904 4df310cf0804f1fa7406f40d5a5ee80e "pdflatex"
   "writeup.bbl" 1763976354 20167 db75c7724e750b1db5bf200af76ba1aa "biber writeup"
-  "writeup.out" 1763986683 2297 adae77996ee835867c8f1ac71f8b5048 "pdflatex"
-  "writeup.run.xml" 1763986683 2326 ac238b94e04b8a9d4d1d2ae873f90c9b "pdflatex"
-  "writeup.tex" 1763986675 40236 f09de5f8121956277b9422dcf01c5f0b ""
-  "writeup.toc" 1763986683 1283 ff79e1c936e5b19e7c0d4b0246ba1a11 "pdflatex"
+  "writeup.out" 1775586864 2297 adae77996ee835867c8f1ac71f8b5048 "pdflatex"
+  "writeup.run.xml" 1775586864 2326 ac238b94e04b8a9d4d1d2ae873f90c9b "pdflatex"
+  "writeup.tex" 1764015832 40376 55474c3f4889993f64c54d30e933d939 ""
+  "writeup.toc" 1775586864 1283 ff79e1c936e5b19e7c0d4b0246ba1a11 "pdflatex"
   (generated)
   "writeup.aux"
   "writeup.bcf"
